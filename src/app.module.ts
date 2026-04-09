@@ -20,5 +20,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
     BalanceModule,
     HcmModule,
   ],
+  controllers: [AppController],
+  providers: [AppService],
 })
 export class AppModule {}

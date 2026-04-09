@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Param, Post } from '@nestjs/common';
+import { Body, Controller, Get, HttpCode, Param, Post } from '@nestjs/common';
 import { BalanceService } from './balance.service';
 import { BalanceDto } from 'src/DTO/balance.dto';
 
@@ -12,6 +12,7 @@ export class BalanceController {
   }
 
   @Post('batch')
+  @HttpCode(201)
   batch(@Body() body: BalanceDto[]) {
     return this.service.batchUpdate(body);
   }
